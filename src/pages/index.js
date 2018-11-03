@@ -8,9 +8,11 @@ import Login from '../components/login'
 window.netlifyIdentity = netlifyIdentity
 netlifyIdentity.init()
 
+const user = netlifyIdentity.currentUser()
+
 const IndexPage = () => (
   <Layout>
-    <h1>Gatsby Page</h1>
+    {user ? <h1>{"Hi "+user.user_metadata.full_name}</h1> : <h1>Gatsby Page</h1> }
     <Login />
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
