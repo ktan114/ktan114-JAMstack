@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import netlifyIdentity from 'netlify-identity-widget'
 
 import Layout from '../components/layout'
+
+window.netlifyIdentity = netlifyIdentity
+netlifyIdentity.init()
 
 const IndexPage = () => (
   <Layout>
