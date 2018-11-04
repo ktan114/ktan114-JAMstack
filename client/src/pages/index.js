@@ -4,7 +4,7 @@ import netlifyIdentity from 'netlify-identity-widget'
 import Layout from '../components/layout'
 import Login from '../components/login'
 
-if (window) {
+if (typeof window !== "undefined") {
   window.netlifyIdentity = netlifyIdentity
   netlifyIdentity.init()
 }
@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Login />
     {netlifyIdentity.on('login', () => {
       netlifyIdentity.close()
-      if (window) window.location.replace('/page-2/')
+      if (typeof window !== "undefined") window.location.replace('/page-2/')
     })}
   </Layout>
 )
