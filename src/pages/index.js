@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Login />
     {netlifyIdentity.on('login', () => {
       netlifyIdentity.close()
-      window.location.replace('/page-2/')
+      window.location.replace('/main/')
     })}
   </Layout>
 )
