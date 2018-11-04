@@ -1,0 +1,54 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+.Buttons {
+  display: grid;
+  height: auto;
+  margin-left: 20px;
+  align-content: space-around;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  background-color: silver;
+}
+
+.linkButton {
+  background-color: hsla(268.16, 64.05%, 60%);
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 5px outset #830da8;
+  width: 200px;
+  height: 75px;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+}
+
+.homeButton {
+  background-color: rgb(119, 15, 15, 60%);
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 5px outset #eb3030;
+  width: 200px;
+  height: 75px;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+}
+
+.linkButton:hover {
+  background-color: silver;
+  cursor: pointer;
+}
