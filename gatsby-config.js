@@ -1,3 +1,6 @@
+const fetch = require('node-fetch')
+const { createHttpLink } = require('apollo-link-http')
+
 module.exports = {
   siteMetadata: {
     title: 'TIL - Today I Learned',
