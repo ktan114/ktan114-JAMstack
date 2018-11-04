@@ -17,5 +17,19 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'HASURA',
+        fieldName: 'hasura',
+        createLink: () =>
+          createHttpLink({
+            uri: `${process.env.HASURA_GRAPHQL_URL}`,
+            headers: {},
+            fetch,
+          }),
+        refetchInterval: 10,
+      },
+    },
   ],
 }
