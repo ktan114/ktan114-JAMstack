@@ -1,14 +1,20 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import netlifyIdentity from 'netlify-identity-widget'
 
 import Layout from '../components/layout'
+import Login from '../components/login'
+
+window.netlifyIdentity = netlifyIdentity
+netlifyIdentity.init()
 
 const IndexPage = () => (
   <Layout>
-    <h1>Gatsby Page</h1>
-    <h3>My name is Kevin</h3>
-    <h6>Looking forward to the hackathon</h6>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h1>Login Page</h1>
+    <Login />
+    {netlifyIdentity.on('login', () => {
+      netlifyIdentity.close()
+      window.location.replace('/page-2/')
+    })}
   </Layout>
 )
 

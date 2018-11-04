@@ -1,13 +1,22 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
+import netlifyIdentity from 'netlify-identity-widget'
 
 import Layout from '../components/layout'
 
+const user = netlifyIdentity.currentUser()
+
 const SecondPage = () => (
   <Layout>
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    {user ? <h1> Hi {user.user_metadata.full_name}</h1> : navigate('/')}
+    <Link
+      onClick={() => {
+        netlifyIdentity.logout()
+      }}
+      to="/"
+    >
+      <button>Logout</button>
+    </Link>
   </Layout>
 )
 
