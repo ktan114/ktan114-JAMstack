@@ -1,5 +1,6 @@
-const fetch = require('node-fetch')
-const { createHttpLink } = require('apollo-link-http')
+const fetch = require(`node-fetch`)
+const { createHttpLink } = require(`apollo-link-http`)
+require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
@@ -27,11 +28,11 @@ module.exports = {
         fieldName: 'hasura',
         createLink: () =>
           createHttpLink({
-            uri: `${process.env.HASURA_GRAPHQL_URL}`,
+            uri: `${ process.env.HASURA_GRAPHQL_URL }`,
             headers: {},
             fetch,
           }),
-        refetchInterval: 10,
+        refetchInterval: 10, // Refresh every 60 seconds for new data
       },
     },
   ],
