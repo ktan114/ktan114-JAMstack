@@ -1,0 +1,29 @@
+.Tips {
+    display: flex;
+    flex-flow: row wrap;
+}
+.Tip {
+    display: flex;
+    flex-flow: column;
+    border: 1px solid black;
+    margin: 10px 5%;
+    width: 100%;
+}
+.Tip__Category {
+    padding: 0;
+    margin: 0;
+    border-bottom: 4px solid black;
+    padding: 5px;
+    text-align: center;
+}
+.Tip__Content {
+    padding: 0;
+    margin: 0;
+    height: 200px;
+    padding: 10px 2% 0 2%;
+    overflow-y: hidden;
+}
+.Tip__Source {
+    padding: 0;
+    margin: 0;
+}
