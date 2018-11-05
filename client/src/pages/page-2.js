@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link, navigate } from 'gatsby'
+if (typeof window !== 'undefined') {
+  import { Link, navigate } from 'gatsby'
+}
 import netlifyIdentity from 'netlify-identity-widget'
 
 import Layout from '../components/layout'
@@ -9,7 +11,11 @@ const user = netlifyIdentity.currentUser()
 
 const SecondPage = () => (
   <Layout>
-    {user && typeof window !== "undefined" ? <h1> Hi {user.user_metadata.full_name}</h1> : navigate('/')}
+    {user && typeof window !== 'undefined' ? (
+      <h1> Hi {user.user_metadata.full_name}</h1>
+    ) : (
+      navigate('/')
+    )}
     <Tips />
     <Link
       onClick={() => {
