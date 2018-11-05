@@ -6,14 +6,11 @@ import Layout from '../components/layout'
 import Tips from '../components/tips'
 
 const user = netlifyIdentity.currentUser()
+if (user === "undefined" && typeof window !== 'undefined') window.location.replace('/')
 
 const SecondPage = () => (
   <Layout>
-    {user ? (
-      <h1> Hi {user.user_metadata.full_name}</h1>
-    ) : typeof window !== 'undefined' ? (
-      window.location.replace('/')
-    ) : null}
+    <h1> Hi {user.user_metadata.full_name}</h1>
     <Tips />
     <Link
       onClick={() => {
