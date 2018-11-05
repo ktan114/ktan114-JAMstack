@@ -9,7 +9,7 @@ const user = netlifyIdentity.currentUser()
 
 const SecondPage = () => (
   <Layout>
-    {user && window ? <h1> Hi {user.user_metadata.full_name}</h1> : navigate('/')}
+    {user && typeof window !== "undefined" ? <h1> Hi {user.user_metadata.full_name}</h1> : navigate('/')}
     <Tips />
     <Link
       onClick={() => {
