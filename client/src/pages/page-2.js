@@ -1,8 +1,8 @@
 import React from 'react'
+import netlifyIdentity from 'netlify-identity-widget'
 if (typeof window !== 'undefined') {
   import { Link, navigate } from 'gatsby'
 }
-import netlifyIdentity from 'netlify-identity-widget'
 
 import Layout from '../components/layout'
 import Tips from '../components/tips'
